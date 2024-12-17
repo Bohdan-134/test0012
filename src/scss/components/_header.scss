@@ -1,0 +1,117 @@
+.header {
+    padding: 24px 0px;
+    background-color: #0000007a;
+    border-bottom: 1px solid #262626;
+
+    .content {
+        @include flex(row, space-between, center);
+    }
+
+    .logo-wrapper {
+        width: 204px;
+        height: 40px;
+        display: block;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .navigation {
+
+        ul {
+            @include flex(row, center, center);
+            gap: 40px;
+
+            li {
+                font-size: 0;
+
+                a {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    color: $white-color;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $orange-color1;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .right-part {
+
+        .btn-container {
+            max-width: 142px;
+        }
+
+        .btn-controls {
+            display: none;
+        }
+
+    }
+
+    @media (max-width: 1024px) {
+        padding: 28px 0px;
+        background-color: #000C10;
+
+        .logo-wrapper {
+            width: 119px;
+            height: 23px;
+        }
+
+        .navigation {
+            display: none;
+        }
+
+        .right-part {
+
+            .btn-container {
+                display: none;
+            }
+
+            .btn-controls {
+                position: relative;
+                z-index: 1;
+                width: 30px;
+                height: 30px;
+                display: block;
+
+                .btn {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition-delay: .2s;
+                    transition: $transition;
+                    
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+
+                .btn-open-menu__type {
+                    transform: scale(1);
+                }
+
+                .btn-close-menu__type {
+                    transform: scale(0);
+                }
+
+            }
+    
+        }
+
+    }
+
+}

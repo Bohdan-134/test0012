@@ -1,0 +1,11 @@
+mixin card1(imgSrc, imgAlt, titleText, textContent, readMoreText, linkUrl, linkClass)
+    a(href=linkUrl, class=linkClass)
+        .top-part
+            .img-wrapper
+                img(src=imgSrc, alt=imgAlt)
+        .bottom-part
+            h3.title.type3 #{titleText}
+            .text-wrapper
+                p.text.type1 #{textContent}
+            .btn-wrapper
+                button.btn.btn-read-more__type #{readMoreText}

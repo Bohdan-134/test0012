@@ -1,0 +1,16 @@
+// --- base ---
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/base";
+@import "./base/fonts";
+@import "./base/mixin";
+@import "./base/buttons";
+
+// --- components ---
+@import "./components/header";
+@import "./components/footer";
+@import "./components/card-type1";
+@import "./components/slider";
+
+// --- layout ---
+@import "./layout/content-section.scss";

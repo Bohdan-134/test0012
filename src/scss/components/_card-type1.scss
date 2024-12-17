@@ -1,0 +1,128 @@
+@import "../base/vars";
+@import "../base/mixin";
+
+.card {
+    
+    &.type1 {
+        width: 100%;
+        height: 100%;
+        @include flex(column, null, null);
+        gap: 40px;
+        transition: $transition;
+
+        .top-part {
+
+            .img-wrapper {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 340px;
+                border: 6px solid $orange-color1;
+                transition: $transition;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 90px;
+                }
+
+                &::before {
+                    top: -6px;
+                    right: -6px;
+                    background: url('data:image/svg+xml,<svg width="100" height="90" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 12L100 90L80 70L80 12L100 12Z" fill="%23FF4800"/><path d="M100 5.91278e-05L1.04908e-06 2.95639e-05L12 12L100 12.0001V5.91278e-05Z" fill="%23FF4800"/></svg>'), no-repeat;
+                    background-size: 100% 100%;
+                    background-position: center;
+                }
+
+                &:after {
+                    bottom: -6px;
+                    left: -6px;
+                    background: url('data:image/svg+xml,<svg width="100" height="90" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 78L2.64891e-05 0L20 20L20 78H0Z" fill="%23FF4800"/><path d="M0 90L100 90L88 78L0 78V90Z" fill="%23FF4800"/></svg>'), no-repeat;
+                    background-size: 100% 100%;
+                    background-position: center;
+                }
+
+            }
+
+        }
+
+        .bottom-part {
+            height: 100%;
+            @include flex(column, null, flex-start);
+
+            .text-wrapper {
+                flex: 1;
+
+                .text {
+                    margin: 40px 0 20px 0;
+                }
+
+            }
+
+        }
+
+        &:hover {
+
+            .top-part {
+
+                .img-wrapper {
+                    border-color: $white-color;
+                }
+
+            }
+
+            .btn-read-more__type {
+                color: $white-color;
+            }
+
+        }
+
+        @media (max-width: 1024px) {
+            gap: 30px;
+
+            .top-part {
+
+                .img-wrapper {
+                    height: 300px;
+                    border: 5px solid $orange-color1;
+    
+                    &::before {
+                        top: -5px;
+                        right: -5px;
+                    }
+    
+                    &:after {
+                        bottom: -5px;
+                        left: -5px;
+                    }
+    
+                }
+    
+            }
+
+            .bottom-part {
+    
+                .text-wrapper {
+    
+                    .text {
+                        margin: 30px 0 16px 0;
+                    }
+    
+                }
+    
+            }
+
+        }
+
+    }
+
+}
+

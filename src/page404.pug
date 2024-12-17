@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon", type="image/x-icon", href="favicon.ico")
+        link(rel="stylesheet", href="./css/page404.css")
+        title 404
+    body
+        .box
+            .box__ghost
+                .symbol
+                .symbol
+                .symbol
+                .symbol
+                .symbol
+                .symbol
+                
+                .box__ghost-container
+                    .box__ghost-eyes
+                        .box__eye-left
+                        .box__eye-right
+                    .box__ghost-bottom
+                        div
+                        div
+                        div
+                        div
+                        div
+                
+                .box__ghost-shadow
+            
+            .box__description
+                .box__description-container
+                    .box__description-title Whoops!
+                    .box__description-text It seems like we couldn't find the page you were looking for
+                
+                a(href="index.html" class="box__button") Go back
+        .decor-imags
+            .img1
+            .img2
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js", integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==", crossorigin="anonymous", referrerpolicy="no-referrer")
+        script.
+            var pageX = $(document).width();
+            var pageY = $(document).height();
+            var mouseY=0;
+            var mouseX=0;
+
+            $(document).mousemove(function( event ) {
+
+                mouseY = event.pageY;
+                yAxis = (pageY/2-mouseY)/pageY*300; 
+
+                mouseX = event.pageX / -pageX;
+                xAxis = -mouseX * 100 - 100;
+
+                $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
+
+            });
